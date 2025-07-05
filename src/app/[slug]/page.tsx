@@ -5,11 +5,10 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { remark } from "remark";
 import html from "remark-html";
-import type { PageProps } from "next";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export default async function ArticlePage({ params }: PageProps<{ slug: string }>) {
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const filePath = path.join(postsDirectory, `${params.slug}.md`);
   if (!fs.existsSync(filePath)) return notFound();
   const fileContents = fs.readFileSync(filePath, "utf8");

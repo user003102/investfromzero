@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{ background: '#f8f9fa', color: '#222', minHeight: '100vh', margin: 0 }}>
+      <body className={inter.variable} style={{ background: '#f8f9fa', color: '#222', minHeight: '100vh', margin: 0 }}>
         <header style={{ background: '#fff', borderBottom: '1px solid #e5e7eb', padding: '1.5rem 0', marginBottom: '2rem', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 2rem' }}>
             <span style={{ fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>investfromzero</span>
